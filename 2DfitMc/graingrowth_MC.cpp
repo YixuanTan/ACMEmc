@@ -1710,7 +1710,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size1 =  sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size1 = 5.0 * dim_y / total_number_of_grains;
 
     number_of_grains = 0;
     calCulateGrainSize2(grid, number_of_grains);
@@ -1718,10 +1718,10 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size2 = sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size2 = 5.0 * dim_y / total_number_of_grains;
 
 if(rank==0)
-std::cout<< "physical_time is "<<physical_time<< " grain_size1 "<<grain_size1<<" grain_size2 "<<grain_size2<<std::endl;
+std::cout<< "  "<<physical_time<< "  "<<grain_size1<<"  "<<grain_size2<<std::endl;
 		update_timer += rdtsc()-start;
 	}//loop over step
 

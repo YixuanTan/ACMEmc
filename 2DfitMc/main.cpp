@@ -310,7 +310,7 @@ int main(int argc, char* argv[]) {
 			if (rank==0) std::cout<<"Finished tessellation in "<<double(init_cycles)/clock_rate<<" sec."<<std::endl;
 			#else
 			//if (rank==0) std::cout<<"init_time(sec)\t"<<double(init_cycles)/clock_rate<<std::endl;
-			if (rank==0) std::cout<<double(init_cycles)/clock_rate<<'\t'<<std::flush;
+			//if (rank==0) std::cout<<double(init_cycles)/clock_rate<<'\t'<<std::flush;
 			#endif
 			assert(grid!=NULL);
 			char filename[FILENAME_MAX] = { }; //new char[outfile.length()+2];
@@ -342,7 +342,7 @@ allbwsum += allbw;
 			if (rank==0) std::cout<<"Wrote "<<outfile<<" in "<<allio/clock_rate<<" sec. MP Write bandwidth was "<<allbw<<" B/s, excluding aggregation overhead."<<std::endl;
 			#else
 			//if (rank==0) std::cout<<"init_bw(B/s)\t"<<allbw<<std::endl;
-			if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
+			//if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
 			#endif
 
 			// perform computation
@@ -399,7 +399,7 @@ allbwsum += allbw;
 				if (rank==0) std::cout<<"Wrote "<<outfile<<" in "<<allio<<" sec."<<std::endl;
 				#else
 				//if (rank==0) std::cout<<"comp_bw(B/s)\t"<<allbw<<std::endl;
-				if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
+				//if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
 				#endif
 				outstr.str("");
 			}
@@ -425,7 +425,7 @@ allbwsum += allbw;
 			if (rank==0) std::cout<<"Finished tessellation in "<<double(init_cycles)/clock_rate<<" sec."<<std::endl;
 			#else
 			//if (rank==0) std::cout<<"init_time(sec)\t"<<double(init_cycles)/clock_rate<<std::endl;
-			if (rank==0) std::cout<<double(init_cycles)/clock_rate<<'\t'<<std::flush;
+			//if (rank==0) std::cout<<double(init_cycles)/clock_rate<<'\t'<<std::flush;
 			#endif
 			assert(grid!=NULL);
 			char filename[FILENAME_MAX] = { }; //new char[outfile.length()+2];
@@ -453,7 +453,7 @@ allbwsum += allbw;
 			if (rank==0) std::cout<<"Wrote "<<outfile<<" in "<<allio/clock_rate<<" sec."<<std::endl;
 			#else
 			//if (rank==0) std::cout<<"init_bw(B/s)\t"<<allbw<<std::endl;
-			if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
+			//if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
 			#endif
 
 			// perform computation
@@ -469,7 +469,7 @@ allbwsum += allbw;
 				#ifndef SILENT
 				if (rank==0) std::cout<<"comp_time(sec)\t"<<double(allcomp)/(np*clock_rate)<<std::endl;
 				#else
-				if (rank==0) std::cout<<double(allcomp)/(np*clock_rate)<<'\t'<<std::flush;
+				//if (rank==0) std::cout<<double(allcomp)/(np*clock_rate)<<'\t'<<std::flush;
 				#endif
 
 				// generate output filename
@@ -506,7 +506,7 @@ allbwsum += allbw;
 				if (rank==0) std::cout<<"Wrote "<<outfile<<" in "<<allio/clock_rate<<" sec."<<std::endl;
 				#else
 				//if (rank==0) std::cout<<"comp_bw(B/s)\t"<<allbw<<std::endl;
-				if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
+				//if (rank==0) std::cout<<allbw<<'\t'<<std::flush;
 				#endif
 				outstr.str("");
 			}
