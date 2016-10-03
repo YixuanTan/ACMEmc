@@ -33,11 +33,11 @@
 #include"output.cpp"
 
 // ------- Al-Cu alloy film
-double lambda = 3.75e-3; //This is fixed from Monte Carlo simulation, so do not change it.  here 10 um is the domain size, so each pixel is 10 nm, all length unit should be with um.
+double lambda = 30e-3 / 32; //This is fixed from Monte Carlo simulation, so do not change it.  here 10 um is the domain size, so each pixel is 10 nm, all length unit should be with um.
 double L_initial = 30.0e-3; // initially 30 nm diameter
 double L0 = 30.0e-3;
-double K1 = 0.6443;
-double n1 = 0.5081;
+double K1 = 0.6976;
+double n1 = 0.4779;
 double m = 1.0/n1;
 double Q = 1.2616495e5; //fitted from Mcbee, William C., and John A. McComb. "Grain growth in thin aluminum-4% copper alloy films." Thin Solid Films 30.1 (1975): 137-143.
 double n = 5.3; 
@@ -1713,7 +1713,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size1 =  sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size1 =  5.0 * dim_y / total_number_of_grains;
 
     number_of_grains = 0;
     calCulateGrainSize2(grid, number_of_grains);
@@ -1721,7 +1721,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size2 = sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size2 = 5.0 * dim_y / total_number_of_grains;
 
 if(rank==0)
 std::cout<< "physical_time is "<<physical_time<< " grain_size1 "<<grain_size1<<" grain_size2 "<<grain_size2<<std::endl;

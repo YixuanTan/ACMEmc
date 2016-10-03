@@ -45,11 +45,11 @@ double R = 8.314;
 */
 
 // ---------Cu film
-double lambda = 1.1/8*1.0e-3;  //length unit is in mm, each pixel is 0.275 um
+double lambda = 1.1/32*1.0e-3;  //length unit is in mm, each pixel is 0.275 um
 double L_initial = 1.1e-3; 
 double L0 = 1.1e-3; 
-double K1 = 0.6443;
-double n1 = 0.5081;
+double K1 = 0.6976;
+double n1 = 0.4779;
 double m = 1.0/n1;
 double Q = 146000; //fitted from Gangulee, A. ”Structure of electroplated and vapordeposited copper films. III. Recrystallization and grain growth.” Journal of Applied Physics 45.9 (1974): 3749-3756.
 double n = 2; 
@@ -1710,7 +1710,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size1 =  sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size1 =  5.0 * dim_y / total_number_of_grains;
 
     number_of_grains = 0;
     calCulateGrainSize2(grid, number_of_grains);
@@ -1718,7 +1718,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     MPI::COMM_WORLD.Allreduce(&number_of_grains, &total_number_of_grains, 1, MPI_UNSIGNED_LONG, MPI_SUM);
     MPI::COMM_WORLD.Barrier();
 
-    double grain_size2 = sqrt(1.5) * 5.0 * dim_y / total_number_of_grains;
+    double grain_size2 = 5.0 * dim_y / total_number_of_grains;
 
 if(rank==0)
 std::cout<< "physical_time is "<<physical_time<< " grain_size1 "<<grain_size1<<" grain_size2 "<<grain_size2<<std::endl;

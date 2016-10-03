@@ -1,4 +1,4 @@
-1;95;0c#!/bin/bash
+#!/bin/bash
 
 # configs  change to your desired configurations:
 #N ; number of node
@@ -13,6 +13,12 @@ configs=(
 "2"
 "3"
 "4"
+"5"
+"6"
+"7"
+"8"
+"9"
+"10"
 )
 
 rm mc.*.sh
