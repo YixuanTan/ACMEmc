@@ -14,11 +14,6 @@ configs=(
 "3"
 "4"
 "5"
-"6"
-"7"
-"8"
-"9"
-"10"
 )
 
 rm mc.*.sh
@@ -26,8 +21,8 @@ rm mc.*.sh
 for conf in "${configs[@]}" ; do
     num=`echo $conf | awk '{print $1}'`
 
-    rm /gpfs/u/home/ACME/ACMEtany/scratch/MSMSEpaper/$name/$num/*  
-    mkdir /gpfs/u/home/ACME/ACMEtany/scratch/MSMSEpaper/$name/$num
+    rm /gpfs/u/home/ACME/ACMEtany/scratch/MSMSEpaper/32lambda/$name/$num/*  
+    mkdir /gpfs/u/home/ACME/ACMEtany/scratch/MSMSEpaper/32lambda/$name/$num
 
     sed -e "s/NAME/$name/g" \
         -e "s/NUM/$num/g" \

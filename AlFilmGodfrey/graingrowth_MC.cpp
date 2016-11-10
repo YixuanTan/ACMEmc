@@ -33,12 +33,12 @@
 #include"output.cpp"
 
 // ------- Al-Cu alloy film
-double lambda = 30e-3 / 32; //This is fixed from Monte Carlo simulation, so do not change it.  here 10 um is the domain size, so each pixel is 10 nm, all length unit should be with um.
+double lambda = 30e-3 / 16; //This is fixed from Monte Carlo simulation, so do not change it.  here 10 um is the domain size, so each pixel is 10 nm, all length unit should be with um.
 double L_initial = 30.0e-3; // initially 30 nm diameter
 double L0 = 30.0e-3;
-double K1 = 0.6976;
-double n1 = 0.4779;
-double m = 1.0/n1;
+double K1 = 0.5663;
+double m = 2.0418;
+double n1 = 1/m;
 double Q = 1.2616495e5; //fitted from Mcbee, William C., and John A. McComb. "Grain growth in thin aluminum-4% copper alloy films." Thin Solid Films 30.1 (1975): 137-143.
 double n = 5.3; 
 double K_ = 5.36770262; // length in um, time in second fitted from Mcbee, William C., and John A. McComb. "Grain growth in thin aluminum-4% copper alloy films." Thin Solid Films 30.1 (1975): 137-143.
@@ -1724,7 +1724,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     double grain_size2 = 5.0 * dim_y / total_number_of_grains;
 
 if(rank==0)
-std::cout<< "physical_time is "<<physical_time<< " grain_size1 "<<grain_size1<<" grain_size2 "<<grain_size2<<std::endl;
+std::cout<< physical_time<< "   "<<grain_size1<< "  " <<grain_size2<<std::endl;
 		update_timer += rdtsc()-start;
 	}//loop over step
 

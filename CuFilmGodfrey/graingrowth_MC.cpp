@@ -48,9 +48,9 @@ double R = 8.314;
 double lambda = 1.1/32*1.0e-3;  //length unit is in mm, each pixel is 0.275 um
 double L_initial = 1.1e-3; 
 double L0 = 1.1e-3; 
-double K1 = 0.6976;
-double n1 = 0.4779;
-double m = 1.0/n1;
+double K1 = 0.6263;
+double m = 2.0697;
+double n1 = 1/m;
 double Q = 146000; //fitted from Gangulee, A. ”Structure of electroplated and vapordeposited copper films. III. Recrystallization and grain growth.” Journal of Applied Physics 45.9 (1974): 3749-3756.
 double n = 2; 
 double K_ = 94.3; //fitted from Gangulee, A. ”Structure of electroplated and vapordeposited copper films. III. Recrystallization and grain growth.” Journal of Applied Physics 45.9 (1974): 3749-3756.
@@ -1725,6 +1725,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
 if(rank==0)
   std::cout<< "physical_time is "<<physical_time<< " grain_size1 "<<grain_size1<<" grain_size2 "<<grain_size2<<std::endl;
 		update_timer += rdtsc()-start;
+
 	}//loop over step
 
 	#ifndef SILENT
