@@ -34,8 +34,8 @@
 
 // ---------Welding Ti–6Al–4V
 double lambda = 30e-6;  //m
-double L_initial = 30e-6; //m 
-double L0 = 30e-6; 
+double L_initial = 30e-6 * 4; //m 
+double L0 = 30e-6 * 4; 
 double K1 =  0.1676;
 double m = 1.9303;
 double n1 = 1.0/m;
@@ -276,7 +276,7 @@ unsigned long generate(MMSP::grid<dim,unsigned long>*& grid, const char* filenam
         coords[0] = codx;
         coords[1] = cody;
         (*grid).AccessToTmc(coords) = tmc_initial;
-          //(*grid).AccessToTmp(coords) = 1.0e6; //set the initial temp to be large enough such that initial physical time = 0.
+        // (*grid).AccessToTmp(coords) = 1.0e6; //set the initial temp to be large enough such that initial physical time = 0.
       }
 /*---------------------------------------------------*/
 	} else if (dim == 3) {
@@ -293,7 +293,7 @@ unsigned long generate(MMSP::grid<dim,unsigned long>*& grid, const char* filenam
           coords[1] = cody;
           coords[2] = codz;
           (*grid).AccessToTmc(coords) = tmc_initial;
-          //(*grid).AccessToTmp(coords) = 1.0e6;
+          (*grid).AccessToTmp(coords) = 1.0e6;
         }
 /*---------------------------------------------------*/
 	}

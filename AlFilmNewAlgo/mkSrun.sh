@@ -1,4 +1,4 @@
-1;95;0c#!/bin/bash
+#!/bin/bash
 
 # configs  change to your desired configurations:
 #N ; number of node
@@ -9,11 +9,16 @@
 name="AlFilmNewAlgo"
 
 configs=(
-"1"
-"2"
-"3"
-"4"
-"5"
+"41"
+"42"
+"43"
+"44"
+"45"
+"46"
+"47"
+"48"
+"49"
+"50"
 )
 
 rm mc.*.sh

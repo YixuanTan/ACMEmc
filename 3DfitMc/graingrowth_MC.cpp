@@ -1521,7 +1521,7 @@ template <int dim> unsigned long update(MMSP::grid<dim, unsigned long>& grid, in
     double grain_size = meanIntercept;
 
 if(rank==0)
-  std::cout<< "physical_time "<<physical_time << " grain_size " << grain_size << std::endl;
+  std::cout<<physical_time << "  " << grain_size << std::endl;
 		update_timer += rdtsc()-start;
 	}//loop over step
 	#ifndef SILENT
