@@ -8,7 +8,7 @@ MMSP deveopers: Jason Gruber, Trever Keller
 
 Derivation developers: Yixuan Tan
 
-Prerequisites
+**Prerequisites**
 This code aims for use in large scale, so an account on an super computer is recommended. A cluster or a multicore machine can also take advantage of the parallel features.
 
 The following libraries are required for the code to run:
@@ -19,14 +19,14 @@ MPI
 IBM XL compiler
 
 
-Compile
+**Compile**
 to compile the code on your local machine, simply navigate to the directory of Makefile, and type in the terminal:
 make parallelmc
 to compile the code on Blue Gene/Q, type
 make bgqmc
 
 
-Running
+**Running**
 to run the code, the following arguments should be passed with the call to executable
 mpirun -n num_of_processors executable --nonstop dim output_filename total_steps increment_steps num_of_threads
 Example:
