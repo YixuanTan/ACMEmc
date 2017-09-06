@@ -25,16 +25,22 @@ IBM XL compiler
 **Compile**
 
 to compile the code on your local machine, simply navigate to the directory of Makefile, and type in the terminal:
-'''make parallelmc'''
+```
+make parallelmc
+```
 
 to compile the code on Blue Gene/Q, type
-'''make bgqmc'''
+```
+make bgqmc
+```
 
 
 **Running**
 
 to run the code, the following arguments should be passed with the call to executable
-'''mpirun -n num_of_processors executable --nonstop dim output_filename total_steps increment_steps num_of_threads'''
+```
+mpirun -n num_of_processors executable --nonstop dim output_filename total_steps increment_steps num_of_threads
+```
 
 Example:
 
@@ -55,4 +61,6 @@ num_of_threads: POSIX Threads to be used. Must be an integer, normally <= 8.
 The result files are XXX.dat. If simulations are running on Blue Gene Q, the XXX.dat files are of little endian format. So you need to download the XXX.dat files from Blue Gene Q to a local machine (most are big endian machine) and convert the XXX.dat files to big endian using the command below. If there is no executable "wrongendian", it should be created first.
 '''./wrongendian XXX.dat XXX_big_endian.dat'''
 You can find wrongendian.cpp under the project root directory, to make a wrongendian executable, type
-'''make wrongendian'''
+```
+make wrongendian
+```
