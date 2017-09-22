@@ -1,4 +1,4 @@
-# MSMSEpaperCode
+# Adaptive Control of Microstructural Evolution : Monte Carlo Simulater (ACMEmc) 
 
 This is the Monte Carlo microstructure simulation package used in the NSF project DMREF: Real Time Control of Grain Growth in Metals
 
